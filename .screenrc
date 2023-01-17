@@ -1,0 +1,14 @@
+deflogin off
+ck 5000
+vbell off
+defscrollback 10000
+termcapinfo xterm* ti@:te@
+startup_message off
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rW}%n*%t%{-}%+w %= %c ${USER}@%H:%1`"
+backtick 1 30 30 sh -c 'screen -ls | grep --color=no -o "$PPID[^[:space:]]*"'
+backtick 2 60 60 /usr/bin/uptime
+bindkey -k k1 select 0
+bindkey -k k2 select 1
+bindkey -k k3 select 2
